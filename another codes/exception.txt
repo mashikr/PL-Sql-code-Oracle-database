@@ -1,0 +1,17 @@
+set serveroutput on;
+DECLARE
+  a number := &A;
+  b number := &B;
+  c number;
+  mydivide_zero exception;
+BEGIN
+    if b=0 then
+        raise mydivide_zero;
+    else 
+        c := a/b;
+        dbms_output.put_line('Division is ' || c);
+    end if;
+    exception
+        when mydivide_zero then
+         dbms_output.put_line('B could not zero');
+END;

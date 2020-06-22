@@ -1,0 +1,33 @@
+set serveroutput on;
+declare 
+    counter number := 0;
+begin
+    loop
+        counter := counter + 1;
+        dbms_output.put_line(counter);
+    exit when counter = 10;
+    end loop;
+end;
+
+/
+
+set serveroutput on;
+declare 
+    counter number := 1;
+begin
+    while counter <= 10 loop
+        dbms_output.put_line(counter);
+        counter := counter + 1;
+    end loop;
+end;
+
+/
+
+set serveroutput on;
+declare 
+    counter number;
+begin
+    for counter in 1..10 loop
+        dbms_output.put_line(counter);
+    end loop;
+end;

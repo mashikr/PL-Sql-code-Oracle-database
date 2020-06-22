@@ -1,0 +1,12 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_num number := &Enter_a_number;
+BEGIN
+    IF MOD(v_num,2) = 0 THEN
+        dbms_output.put_line(v_num || ' is Even');
+    ELSE
+        dbms_output.put_line(v_num || ' is odd');
+    END IF;
+        dbms_output.put_line('If else condition complete');
+END;
+/

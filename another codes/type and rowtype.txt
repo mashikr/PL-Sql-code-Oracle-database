@@ -1,0 +1,15 @@
+set serveroutput on;
+DECLARE
+   v_EmpName  employees.first_name%TYPE;
+BEGIN
+    SELECT first_name INTO v_EmpName FROM employees WHERE employee_id = 100;
+    DBMS_OUTPUT.PUT_LINE('Name = ' || v_EmpName);
+END;
+/
+set serveroutput on;
+DECLARE
+  v_emp employees%ROWTYPE;
+BEGIN
+    SELECT * INTO v_emp FROM employees WHERE employee_id = 100;
+    DBMS_OUTPUT.PUT_LINE('Name = ' || v_emp.first_name||' ' || v_emp.last_name);
+END;

@@ -1,0 +1,9 @@
+SET SERVEROUT ON;
+DECLARE
+    c_name customers.name%TYPE;
+BEGIN
+    select name into c_name from customers
+    where id=4;
+    dbms_output.put_line(c_name);
+END;
+/

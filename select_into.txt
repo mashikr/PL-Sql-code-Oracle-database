@@ -1,0 +1,17 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+   c_salary number(8); 
+BEGIN 
+    select salary into c_salary from customers
+    where customers.id = 2;
+   dbms_output.put_line(c_salary); 
+END; 
+/
+DECLARE 
+    c_salary number(8);
+    c_name varchar2(20);
+BEGIN
+    select salary, name into c_salary, c_name from customers
+    where customers.id=3;
+    dbms_output.put_line(c_name || ' Has salary ' || c_salary);
+END;

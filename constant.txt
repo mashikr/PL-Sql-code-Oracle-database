@@ -1,0 +1,13 @@
+SET SERVEROUT ON;
+DECLARE
+    pi CONSTANT NUMBER(7,6) := 3.141592;
+BEGIN
+    dbms_output.put_line(pi);
+END;
+/
+
+DECLARE
+    pi CONSTANT NUMBER(7,6) NOT NULL DEFAULT 3.141592;
+BEGIN
+    dbms_output.put_line(pi);
+END;

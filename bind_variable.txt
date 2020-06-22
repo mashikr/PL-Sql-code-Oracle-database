@@ -1,0 +1,9 @@
+SET SERVEROUTPUT ON;
+BEGIN
+    :BIND := 'ASHIK MIA';
+    dbms_output.put_line(:BIND);
+END;
+//
+
+VARIABLE BIND VARCHAR2(10);
+EXEC :BIND := 'aSHIK mIA';

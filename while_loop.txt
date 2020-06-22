@@ -1,0 +1,40 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_counter number := 1;
+    v_result number;
+BEGIN
+    WHILE v_counter <= 10 LOOP
+        v_result := 19 * v_counter;
+        dbms_output.put_line('19 X ' || v_counter || ' = ' || v_result);
+        v_counter := v_counter + 1;
+    END LOOP;
+        dbms_output.put_line('Outside the loop');
+END;
+/
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_test boolean := true;
+    v_counter number := 0;
+BEGIN
+    WHILE v_test LOOP
+        v_counter := v_counter + 1;
+        dbms_output.put_line(v_counter);
+        if v_counter = 10 then
+        v_test := false;
+        end if;
+    END LOOP;
+        dbms_output.put_line('Outside the loop');
+END;
+/
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_test boolean := true;
+    v_counter number := 0;
+BEGIN
+    WHILE v_test LOOP
+        v_counter := v_counter + 1;
+        dbms_output.put_line(v_counter);
+        EXIT WHEN v_counter = 10;
+    END LOOP;
+        dbms_output.put_line('Outside the loop');
+END;

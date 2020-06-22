@@ -1,0 +1,20 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_num number := 9;
+BEGIN
+    IF v_num <10 THEN
+        dbms_output.put_line('Inside The IF');
+    END IF;
+        dbms_output.put_line('Outside the if');
+END;
+/
+SET SERVEROUTPUT ON;
+DECLARE 
+    website varchar2(30) := 'google.com';
+    author varchar(30) := 'Ashik';
+BEGIN
+    IF website = 'google.com' AND author = 'Ashik' THEN
+        dbms_output.put_line('Everything ok');
+    END IF;
+        dbms_output.put_line('sing in not ok');
+END;

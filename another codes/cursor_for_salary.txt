@@ -1,0 +1,35 @@
+set serveroutput on;
+declare 
+    e_name varchar2(20);
+    cursor ashik is 
+    select first_name from employees
+    where salary>5000;
+begin
+    open ashik;
+    loop
+        fetch ashik into e_name;
+        dbms_output.put_line(e_name);
+        exit when ashik%notfound;
+    end loop;
+    close ashik;
+end;
+/
+
+set serveroutput on;
+declare 
+    e_name varchar2(20);
+    e_id number(38,0);
+    e_age number(38,0);
+
+    cursor ashik is 
+    select id,name,age from customers
+    where salary>5000;
+begin
+    open ashik;
+    loop
+        fetch ashik into e_id,e_name,e_age;
+        dbms_output.put_line(e_id || ' ' || e_name || ' ' || e_age);
+        exit when ashik%notfound;
+    end loop;
+    close ashik;
+end;

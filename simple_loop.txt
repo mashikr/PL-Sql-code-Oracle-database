@@ -1,0 +1,29 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_counter number := 0;
+    v_result number;
+BEGIN
+    LOOP
+        v_counter := v_counter + 1;
+        v_result := 19 * v_counter;
+        dbms_output.put_line('19 x ' || v_counter || ' = ' || v_result);
+        
+        IF v_counter = 10 THEN
+            EXIT;
+        END IF;
+    END LOOP;
+END;
+/
+SET SERVEROUTPUT ON;
+DECLARE 
+    v_counter number := 0;
+    v_result number;
+BEGIN
+    LOOP
+        v_counter := v_counter + 1;
+        v_result := 19 * v_counter;
+        dbms_output.put_line('19 x ' || v_counter || ' = ' || v_result);
+        
+        EXIT WHEN v_counter = 10;
+    END LOOP;
+END;

@@ -1,0 +1,15 @@
+SET SERVEROUTPUT ON;
+DECLARE 
+    place varchar2(30) := '&Enter_Place';
+BEGIN
+    IF place = 'Dhaka' THEN
+        dbms_output.put_line('This is capital of BD');
+    ELSIF place = 'Chittagong' THEN
+        dbms_output.put_line('Sea Port town');
+    ELSIF place = 'Comilla' THEN
+        dbms_output.put_line('My City');  
+    ELSE
+        dbms_output.put_line('Unknown city');
+    END IF;
+        dbms_output.put_line('If else condition complete');
+END;

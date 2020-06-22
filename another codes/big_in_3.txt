@@ -1,0 +1,20 @@
+set serveroutput on;
+declare 
+    a number;
+    b number;
+    c number;
+    bg number;
+begin
+    a := &A;
+    b := &B;
+    c := &C;
+    
+    if a>b and a>c then
+        bg := a;
+    elsif  b>c and b>a then
+        bg :=b;
+    else
+        bg := c;
+   end if; 
+        dbms_output.put_line(bg|| ' is the big number');
+end;

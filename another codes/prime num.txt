@@ -1,0 +1,20 @@
+set serveroutput on;
+declare 
+    i number;
+    j number;
+    c number;
+begin
+    for i in 1..100 loop
+        c := 0;
+        j := 1;
+        while j<=i loop
+            if(MOD(i,j)=0) then
+                c := c+1;
+            end if;
+            j := j+1;
+        end loop;
+        if(c=2) then
+            dbms_output.put_line(i);
+        end if;
+    end loop;
+end;

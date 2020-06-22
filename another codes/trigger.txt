@@ -1,0 +1,21 @@
+
+CREATE OR REPLACE TRIGGER tr_superheroes
+BEFORE INSERT OR UPDATE OR DELETE ON superheroes
+FOR EACH ROW
+ENABLE
+DECLARE
+    v_user varchar2(20);
+BEGIN
+    SELECT user INTO v_user FROM dual;
+    if inserting then
+        dbms_output.put_line('One Row Inserted By ' || v_user);
+    ELSIF DELETING THEN
+        dbms_output.put_line('One Row Deleted By ' || v_user);
+    ELSIF UPDATING THEN
+        dbms_output.put_line('One Row Updated By ' || v_user);
+    END IF;
+END;
+/
+INSERT INTO superheroes VALUES ('Batman');
+UPDATE superheroes set sh_name = 'Superman' WHERE sh_name = 'Batman';
+DELETE FROM SUPERHEROES WHERE sh_name = 'Superman';
